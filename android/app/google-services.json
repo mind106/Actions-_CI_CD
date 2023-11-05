@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1070858126341",
+    "project_id": "ci-cd-31cbb",
+    "storage_bucket": "ci-cd-31cbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070858126341:android:5805ece992df0b36ffc86c",
+        "android_client_info": {
+          "package_name": "com.example.actions_cicd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtqVMMoCo-1o1dn-j165pwZQhgb2D8M1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
