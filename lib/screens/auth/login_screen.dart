@@ -71,11 +71,11 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               child: InkWell(
-                // onTap: () => Navigator.of(context).push(
-                //   MaterialPageRoute(
-                //     builder: (context) => const HomeScreen(),
-                //   ),
-                // ),
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const HomeScreen(),
+                  ),
+                ),
                 // onTap: () => authController.loginUser(
                 //   _emailController.text,
                 //   _passwordController.text,
@@ -104,11 +104,11 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  // onTap: () => Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => SignupScreen(),
-                  //   ),
-                  // ),
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => SignupScreen(),
+                    ),
+                  ),
                   child: Text(
                     'Register',
                     style: TextStyle(fontSize: 20, color: buttonColor),
