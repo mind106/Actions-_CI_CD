@@ -1,13 +1,15 @@
-import 'package:actions_cicd/screens/auth/login_screen.dart';
+import 'package:actions_cicd/controllers/auth_controller.dart';
 import 'package:actions_cicd/utils/constants.dart';
+import 'package:actions_cicd/views/screens/auth/login_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp().then((value) {
-  //   Get.put(AuthController());
-  // });
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp().then((value) {
+    Get.put(AuthController());
+  });
 
   runApp(const MyApp());
 }
