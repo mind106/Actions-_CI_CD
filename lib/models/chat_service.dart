@@ -13,7 +13,8 @@ class ChatsService extends ChangeNotifier {
     // get current user info
     final String currentUserId = _auth.currentUser!.uid;
     final String currentUserEmail = _auth.currentUser!.email.toString();
-    // final String userData = _auth.currentUser!.
+    // final String currentUserName = _auth.currentUser!.userName.toString();
+
     final Timestamp timestamp = Timestamp.now();
     // final String
 
@@ -23,7 +24,7 @@ class ChatsService extends ChangeNotifier {
       receiverId: receiverId,
       timestamp: timestamp,
       message: message,
-      // username: '',
+      // userName: currentUserName,
     );
 
     List<String> ids = [currentUserId, receiverId];
@@ -47,7 +48,7 @@ class ChatsService extends ChangeNotifier {
     return _firestore
         .collection('chat_rooms')
         .doc(chatRoomId)
-        .collection('messages')
+        .collection('message')
         .orderBy('timestamp', descending: false)
         .snapshots();
   }

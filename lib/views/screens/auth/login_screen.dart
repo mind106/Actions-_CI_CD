@@ -71,15 +71,15 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               child: InkWell(
-                onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
-                  ),
-                ),
-                // onTap: () => authController.loginUser(
-                //   _emailController.text,
-                //   _passwordController.text,
+                // onTap: () => Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const HomeScreen(),
+                //   ),
                 // ),
+                onTap: () => authController.loginUser(
+                  _emailController.text,
+                  _passwordController.text,
+                ),
                 child: const Center(
                   child: Text(
                     'Login',

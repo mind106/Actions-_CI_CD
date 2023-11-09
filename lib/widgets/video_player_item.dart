@@ -24,6 +24,7 @@ class _VideoPlayerItemState extends State<VideoPlayerItem> {
       ..initialize().then((value) {
         videoPlayerController.play();
         videoPlayerController.setVolume(1);
+        setState(() {});
       });
   }
 
@@ -34,16 +35,52 @@ class _VideoPlayerItemState extends State<VideoPlayerItem> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+  // Widget build(BuildContext context) {
+  //   final size = MediaQuery.of(context).size;
 
-    return Container(
-      width: size.width,
-      height: size.height,
-      decoration: const BoxDecoration(
-        color: Colors.black,
+  //   return Container(
+  //     width: size.width,
+  //     height: size.height,
+  //     decoration: const BoxDecoration(
+  //       color: Colors.black,
+  //     ),
+  //     child: Center(
+  //       child: VideoPlayer(videoPlayerController),
+  //     ),
+  //   );
+  // }
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.black,
+        body: Center(
+          child: AspectRatio(
+            aspectRatio: videoPlayerController.value.aspectRatio,
+            child: VideoPlayer(videoPlayerController),
+          ),
+        ),
+        // floatingActionButton: Padding(
+        //   padding: const EdgeInsets.only(
+        //     right: 160,
+        //     bottom: 200,
+        //   ),
+        //   child: FloatingActionButton(
+        //     onPressed: () {
+        //       setState(() {
+        //         videoPlayerController.value.isPlaying
+        //             ? videoPlayerController.pause()
+        //             : videoPlayerController.play();
+        //       });
+        //     },
+        //     child: Icon(
+        //       videoPlayerController.value.isPlaying
+        //           ? Icons.pause
+        //           : Icons.play_arrow,
+        //     ),
+        //   ),
+        // ),
       ),
-      child: VideoPlayer(videoPlayerController),
     );
   }
 }

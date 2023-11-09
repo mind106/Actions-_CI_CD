@@ -2,13 +2,12 @@ name: Build & upload to Firebase App Distribution
 
 on:
   push:
-    branches: [ "dev" ]
+    branches: ["dev"]
   pull_request:
-    branches: [ "dev" ]
+    branches: ["dev"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -18,6 +17,7 @@ jobs:
           distribution: "zulu"
           java-version: "11"
       # - name: Decode google-services.json
+      #   env:
       #   env: 
       #       GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
       #   run: echo "$GOOGLE_SERVICES_JSON" > android/app/google-services.json
@@ -28,7 +28,7 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.13.6'
+          flutter-version: "3.13.6"
       - run: flutter clean
       - run: flutter pub get
       - run: flutter build apk --release
@@ -37,9 +37,9 @@ jobs:
           name: release-apk
           path: build/app/outputs/apk/release/app-release.apk
       - name: upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1 
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
-            appId: ${{secrets.APPID}}
-            token: ${{secrets.TOKEN}}
-            groups: pre-tester
-            file: build/app/outputs/apk/release/app-release.apk
+          appId: ${{secrets.APPID}}
+          token: ${{secrets.TOKEN}}
+          groups: pre-tester
+          file: build/app/outputs/apk/release/app-release.apk
