@@ -144,8 +144,8 @@ class VideoScreen extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            width: 100,
-                            margin: EdgeInsets.only(top: size.height / 5),
+                            width: 60,
+                            margin: EdgeInsets.only(top: size.height / 3),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
