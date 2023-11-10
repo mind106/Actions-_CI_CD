@@ -2,6 +2,7 @@ import 'package:actions_cicd/controllers/auth_controller.dart';
 import 'package:actions_cicd/views/screens/add_video_screen.dart';
 import 'package:actions_cicd/views/screens/chat_screen.dart';
 import 'package:actions_cicd/views/screens/profile_screen.dart';
+import 'package:actions_cicd/views/screens/search_screen.dart';
 import 'package:actions_cicd/views/screens/video_screen.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -13,8 +14,8 @@ import 'package:flutter/material.dart';
 List pages = [
   // const Center(child: Text("Video Screen")),
   VideoScreen(),
-  const Center(child: Text("Search Screen")),
-  // SearchScreen(),
+  // const Center(child: Text("Search Screen")),
+  SearchScreen(),
   // const Center(child: Text("AddVideo Screen")),
   const AddVideoScreen(),
   // const Center(child: Text("Messages Screen")),
